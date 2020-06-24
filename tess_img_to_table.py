@@ -11,14 +11,20 @@ except ImportError:
 import pytesseract
 
 # read your file
-file = 'images/test_image.png'
+file = 'images/electricity_1.png'
 img = cv2.imread(file, 0)
+# plotting = plt.imshow(img)
+# plt.show()
 
 # thresholding the image to a binary image
-thresh, img_bin = cv2.threshold(img, 128, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
+# thresh, img_bin = cv2.threshold(img, 128, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
+img_bin = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+                                cv2.THRESH_BINARY, 11, 2)
 
-# inverting the image
 img_bin = 255 - img_bin
+
+# plotting = plt.imshow(img_bin)
+# plt.show()
 cv2.imwrite('preprocessed_img/cv_inverted.png', img_bin)
 # # Plotting the image to see the output
 # plotting = plt.imshow(img_bin, cmap='gray')
@@ -44,7 +50,7 @@ cv2.imwrite("preprocessed_img/vertical.jpg", vertical_lines)
 # Use horizontal kernel to detect and save the horizontal lines in a jpg
 image_2 = cv2.erode(img_bin, hor_kernel, iterations=3)
 horizontal_lines = cv2.dilate(image_2, hor_kernel, iterations=3)
-cv2.imwrite("/Users/marius/Desktop/horizontal.jpg", horizontal_lines)
+cv2.imwrite("preprocessed_img/horizontal.jpg", horizontal_lines)
 # # Plot the generated image
 # plotting = plt.imshow(image_2, cmap='gray')
 # plt.show()
@@ -63,6 +69,10 @@ bitnot = cv2.bitwise_not(bitxor)
 
 # Detect contours for following box detection
 contours, hierarchy = cv2.findContours(img_vh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+
+cv2.drawContours(img, contours, -1, (0, 255, 0), 2)
+plotting = plt.imshow(img, cmap='gray')
+plt.show()
 
 
 def sort_contours(cnts, method="left-to-right"):
@@ -190,6 +200,6 @@ for i in range(len(finalboxes)):
 arr = np.array(outer)
 dataframe = pd.DataFrame(arr.reshape(len(row), countcol))
 print(dataframe)
-# data = dataframe.style.set_properties(a)
+data = dataframe.style.set_properties(align="left")
 # Converting it in a excel-file
 dataframe.to_csv("csv/output.csv", index=False)
