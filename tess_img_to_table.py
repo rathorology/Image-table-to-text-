@@ -11,7 +11,7 @@ except ImportError:
 import pytesseract
 
 # read your file
-file = 'images/electricity_1.png'
+file = 'images/table_image.png'
 img = cv2.imread(file, 0)
 # plotting = plt.imshow(img)
 # plt.show()
@@ -70,9 +70,10 @@ bitnot = cv2.bitwise_not(bitxor)
 # Detect contours for following box detection
 contours, hierarchy = cv2.findContours(img_vh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
-cv2.drawContours(img, contours, -1, (0, 255, 0), 2)
-plotting = plt.imshow(img, cmap='gray')
-plt.show()
+
+# cv2.drawContours(img, contours, -1, (0, 0, 255), 3)
+# plotting = plt.imshow(cv2.resize(img, (1000, 1000)), cmap='gray')
+# plt.show()
 
 
 def sort_contours(cnts, method="left-to-right"):
@@ -98,6 +99,10 @@ def sort_contours(cnts, method="left-to-right"):
 # Sort all the contours by top to bottom.
 contours, boundingBoxes = sort_contours(contours, method="top-to-bottom")
 
+# cv2.drawContours(img, contours, -1, (0, 0, 255), 3)
+# plotting = plt.imshow(cv2.resize(img, (1000, 1000)), cmap='gray')
+# plt.show()
+
 # Creating a list of heights for all detected boxes
 heights = [boundingBoxes[i][3] for i in range(len(boundingBoxes))]
 
@@ -113,8 +118,8 @@ for c in contours:
         image = cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
         box.append([x, y, w, h])
 
-# plotting = plt.imshow(image, cmap='gray')
-# plt.show()
+plotting = plt.imshow(image, cmap='gray')
+plt.show()
 
 # Creating two lists to define row and column in which cell is located
 row = []
