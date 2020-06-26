@@ -114,9 +114,9 @@ box = []
 # Get position (x,y), width and height for every contour and show the contour on image
 for c in contours:
     x, y, w, h = cv2.boundingRect(c)
-    if (w < 1000 and h < 500):
-        image = cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
-        box.append([x, y, w, h])
+    # if (w < 1000 and h < 500):
+    image = cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
+    box.append([x, y, w, h])
 
 plotting = plt.imshow(image, cmap='gray')
 plt.show()
@@ -147,8 +147,8 @@ for i in range(len(box)):
             previous = box[i]
             column.append(box[i])
 
-print(column)
-print(row)
+# print(column)
+# print(row)
 
 # calculating maximum number of cells
 countcol = 0
@@ -162,7 +162,7 @@ center = [int(row[i][j][0] + row[i][j][2] / 2) for j in range(len(row[i])) if ro
 
 center = np.array(center)
 center.sort()
-print(center)
+# print(center)
 # Regarding the distance to the columns center, the boxes are arranged in respective order
 
 finalboxes = []
@@ -197,7 +197,7 @@ for i in range(len(finalboxes)):
 
                 out = pytesseract.image_to_string(erosion)
                 if (len(out) == 0):
-                    out = pytesseract.image_to_string(erosion, config='--psm 3')
+                    out = pytesseract.image_to_string(erosion, lang='eng', config='--psm 6')
                 inner = inner + " " + out
             outer.append(inner)
 
@@ -207,4 +207,4 @@ dataframe = pd.DataFrame(arr.reshape(len(row), countcol))
 print(dataframe)
 data = dataframe.style.set_properties(align="left")
 # Converting it in a excel-file
-dataframe.to_csv("csv/output.csv", index=False)
+# dataframe.to_csv("csv/output.csv", index=False)
