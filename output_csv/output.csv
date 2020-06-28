@@ -1,35 +1,14 @@
-0,1,2,3,4,5,6,7,8
-, , , , , , , , 
-, , , , , , , , 
-,,Part, , , , , , 
-,,tnvolce Number, , , , , , 
-Field6,reis,Field4,s,Field2,e,e yee,Customer ld,Txt
-,30,I,14,3,3,,eeeeni,00000
-3I,aL.,1a,4,1a,16,Abcdefghi,00001,z
-3a,3,I3,43,1I,17,Abcdefghi,0oo56,a3
-o,1,Abcdefghi,0oo78,4,41,H,I,LB
-abcenh -,0O45,s,-2,5,1,7,A,3
-Acdehi',0OD05,6,3,6,17,6,15,aI
-s,1,Adefeh,0OO48,7,/-,,Aa2,5
-oooz',8,AA5,8,4,A,a33,5,Abcdefghi
-s,-,9,2s,s,L.,1a.,Abcdefghi,00035
-eees,1o,5,1o,3I,,73,8,Abcefghi
-,S,6,Abcdefghi,ge,11,5,1l,a
-so,ia,7,3,3I,4-,Abcdefghi,eeee.,12
-4,33,3,Abcdefghi,ooz,13,S5I.,LeL.,4
-37,Abcdefghi,00i9,14,L2..,1g,35,5,3
-o,18,Ahcdefighi,gg,1s,S3,,36,6
-51,L,Ahcdefghi,00117,16,5,16,37,71
-AhcdenM -,ooi116,17,ss,17, 3,9,6I,L.
-EE,0oi15,18,l,I3,9,1z,;88,7
-0o1I47,19,2,13,s,13,6,3,Abcdefghi
-00113,2O,3,o,7,1,5,2,Abcdefghi
-Aceeh-,eggL,21,4,1,,17,33,a
-a,ss,2,4,Aeeeeh,000iI,5,,5
-oooo,23,,3,A-,4,13,6,Abeetghn
-,24,,-,s.3,12,,Abcdefghi,7
-s,1/,o,Abcdefghi,ee,6,LaC,2,7
-,26,a4,I,Abcdefghi,,24,10o,
-5,z,3a,3,Abcdefghi,7I,7,LLt.,A-
-ooo ,28,33,8,Abcdefghi,,L.,18,3
-ooos ,29,3I,7A,bcdefgh,,L,1,A
+0,1,2,3,4
+Patient,Procedure,Procedure Date,Status,Assignee
+, , , , 
+08/30/208,Darren Adams,Something medical,Complete,Mike A
+08/2o2O8,Song Bao,Something medical,Paused,JenniferS
+06/O7/2OI8,Justine Robinson,Something medical,Complete,Unassigned
+Salome Fernan,08/24/20O8,Something medical,Active,Unassigned
+10/04/20i8,Lucas Pacheco,Something medical,Active,Mike A
+08/04/20i8,Shadrias Pearson,Something medical,Active,Aaron B
+0O7/24/2Oi8,Luvleen Lawrence,Something medical,Active,Unassigned
+08/2o2O8,Song Bao,Something medical,Paused,Mike A
+08/2o2O8,Song Bao,Something medical,Active,Unassigned
+o7/3M2OI8,Victor Pacheco,Something medical,Active,JenniferS
+06/02/2OI8,Neeshaan El Pasha,Something medical,Paused,Jennifer S

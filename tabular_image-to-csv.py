@@ -7,7 +7,7 @@ from kraken import rpred, binarization
 from PIL import Image
 from subprocess import call
 from imutils import contours
-
+import argparse
 import warnings
 
 warnings.filterwarnings("ignore", category=FutureWarning)
@@ -79,7 +79,13 @@ def preprocessing_tabular(path):
 
 
 if __name__ == '__main__':
-    path = "images/hand.jpg"
+    parser = argparse.ArgumentParser(description="OCR on Tablular Image")
+    parser.add_argument('--img-path', type=str, help='path to your image.')
+    args = parser.parse_args()
+
+    # ---Image_Path---
+    path = args.img_path
+
     img, genrator_image, cnts = preprocessing_non_tabular(path)
     if len(cnts) < 8:
         img, genrator_image, cnts = preprocessing_tabular(path)
