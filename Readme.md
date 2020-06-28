@@ -39,10 +39,6 @@ python3 tabular_image-to-csv.py --img-path images/patient.png
 
 ![Screenshot](images/patient.png)
 
-### Original:-
-
-![Screenshot](images/patient.png)
-
 ### Threashold:-
 
 ![Screenshot](processed_image/threshold.png)
