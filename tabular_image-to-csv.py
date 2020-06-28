@@ -85,27 +85,18 @@ if __name__ == '__main__':
 
     # ---Image_Path---
     path = args.img_path
+    # path = "images/patient.png"
 
     img, genrator_image, cnts = preprocessing_non_tabular(path)
     if len(cnts) < 8:
         img, genrator_image, cnts = preprocessing_tabular(path)
 
-    dummy_image = img.copy()
     row_list = list()
     old_y = 0
     single_row = list()
     for idx, cnt in enumerate(cnts):
-        area = cv2.contourArea(cnt)
 
         x, y, w, h = cv2.boundingRect(cnt)
-
-        ## Different color for each row
-        r = random.randint(0, 255)
-        g = random.randint(0, 255)
-        b = random.randint(0, 255)
-
-        # Drawing box
-        cv2.rectangle(dummy_image, (x, y), (x + w, y + h), (b, g, r), 2)
         if idx == 0:
             single_row.append([x, y, w, h])
         else:
@@ -117,11 +108,8 @@ if __name__ == '__main__':
                 single_row.append([x, y, w, h])
         old_y = y
 
-    cv2.imwrite("processed_image/show_box.png", dummy_image)
-    # cv2.imshow('final', dummy_image)
-    # cv2.waitKey(0)
-
     # color = (np.random.random(size=3) * 256)
+    dummy_image = img.copy()
 
     all_text = list()
     row_count = list()
@@ -130,6 +118,13 @@ if __name__ == '__main__':
         row_text = list()
         for one_box in row_boxes:
             x, y, w, h = one_box
+            ## Different color for each row
+            r = random.randint(0, 255)
+            g = random.randint(0, 255)
+            b = random.randint(0, 255)
+
+            # Drawing box
+            cv2.rectangle(dummy_image, (x, y), (x + w, y + h), (b, g, r), 2)
             #########################################################################################
 
             ## Kraken Text Extraction
@@ -161,8 +156,12 @@ if __name__ == '__main__':
         all_text.append(row_text)
         print("======================================================================")
     print(all_text)
-    updated_text_rows = list()
 
+    cv2.imwrite("processed_image/show_box.png", dummy_image)
+    # cv2.imshow('final', dummy_image)
+    # cv2.waitKey(0)
+
+    updated_text_rows = list()
     columns = max(set(row_count), key=row_count.count)
 
     for rows in all_text:
