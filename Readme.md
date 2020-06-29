@@ -1,6 +1,6 @@
-#Tabular Image to CSV:-
+# Tabular Image to CSV:-
 
-##Prerequisites :-
+## Prerequisites :-
 
 * [OpenCV]()
 * [kraken]()
