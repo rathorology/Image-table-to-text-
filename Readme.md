@@ -1,4 +1,4 @@
-#Multi Face-mask detection using SSD:-
+#Tabular Image to CSV:-
 
 ##Prerequisites :-
 
