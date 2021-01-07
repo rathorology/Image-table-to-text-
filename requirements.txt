@@ -10,7 +10,7 @@ imutils==0.5.3
 Jinja2==2.11.2
 jsonschema==3.2.0
 kraken==2.0.8
-lxml==4.5.1
+lxml==4.6.2
 MarkupSafe==1.1.1
 numpy==1.19.0
 opencv-python==4.2.0.34
