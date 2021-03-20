@@ -7,7 +7,7 @@ future==0.18.2
 idna==2.10
 importlib-metadata==1.7.0
 imutils==0.5.3
-Jinja2==2.11.2
+Jinja2==2.11.3
 jsonschema==3.2.0
 kraken==2.0.8
 lxml==4.5.1
