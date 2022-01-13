@@ -15,7 +15,7 @@ MarkupSafe==1.1.1
 numpy==1.19.0
 opencv-python==4.2.0.34
 pandas==1.0.5
-Pillow==7.1.2
+Pillow==9.0.0
 protobuf==3.12.2
 pyrsistent==0.16.0
 python-bidi==0.4.2
